@@ -1,0 +1,388 @@
+Question- 1. What is Java?
+
+Java is a high-level, object-oriented programming language developed by Sun Microsystems in 1995. It is mostly used for building desktop applications, web applications, Android apps and enterprise systems.
+-------------------------------------------------------------------------------------------------
+
+Question -2. Is Java platform dependent or independent?
+
+Java is platform independent. Java programs can run on any operating system with a JVM.
+-------------------------------------------------------------------------------------------------------------------------
+
+Question- 3. What is JVM?
+
+JVM stands for Java Virtual Machine.
+
+It is a part of the Java platform that allows Java programs to run on any device or operating system.
+
+When we write a Java program, it is first compiled into bytecode. This bytecode cannot run directly on a machine. So, the JVM converts this bytecode into machine-level code that the system can understand.
+
+That is why Java is platform-independent, because the JVM acts as a bridge between the program and the operating system.
+
+JVM also provides important features like memory management, security, and exception handling.
+--------------------------------------------------------------------------------------------------------------------------------
+
+Question-4. What is JDK and JRE?
+JDK and JRE are both important parts of Java.
+
+JRE stands for Java Runtime Environment. It provides the environment needed to run Java programs. It includes the JVM and the necessary libraries.
+
+JDK stands for Java Development Kit. It is a complete package used for developing Java programs. It includes JRE along with development tools like compiler, debugger, and other utilities.
+
+So, in simple terms:
+JRE is used to run Java programs, while JDK is used to develop and run Java programs.
+
+Also, JDK contains JRE, and JRE contains JVM.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Question-5. Why is Java called “Write Once, Run Anywhere”?
+
+Java is called ‘Write Once, Run Anywhere’ because a Java program can be written once and then run on any platform without modification.
+
+This is possible because Java code is not compiled directly into machine code. Instead, it is compiled into an intermediate form called bytecode.
+
+This bytecode is executed by the Java Virtual Machine, or JVM. Since JVM is available on different operating systems like Windows, Linux, and Mac, the same Java program can run on all of them.
+
+So, the JVM acts as a bridge between the program and the system, making Java platform-independent.
+
+That is why Java is known as ‘Write Once, Run Anywhere’.
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Question-6. What is a class in Java?
+
+A class in Java is a blueprint or template used to create objects.
+
+It defines the properties and behaviors that the objects created from it will have. The properties are represented by variables, and the behaviors are represented by methods.
+
+For example, if we have a class called ‘Car’, it can have properties like color and speed, and methods like start() and stop().
+
+So, a class does not occupy memory until an object is created from it.
+
+In simple terms, a class is a collection of data and functions that operate on that data.
+-----------------------------------------------------------------------------------------------------------------------
+
+Question-7. What is an object?
+
+An object in Java is an instance of a class.
+
+It represents a real-world entity and contains both data and behavior. The data is stored in variables, and the behavior is defined by methods.
+
+For example, if ‘Car’ is a class, then a specific car like ‘myCar’ is an object. It will have its own values like color, speed, etc., and can perform actions like start or stop.
+
+Objects are used to access the properties and methods defined in a class.
+
+Also, memory is allocated only when an object is created.
+-----------------------------------------------------------------------------------------------------------------------
+Question -8.What is the main method in Java?
+
+The main method in Java is the starting point of any Java program.
+
+Whenever we run a Java program, the execution begins from the main method.
+
+Its syntax is:
+public static void main(String[] args)
+
+Here,
+‘public’ means it can be accessed from anywhere,
+‘static’ means it can be called without creating an object,
+‘void’ means it does not return any value,
+and ‘String[] args’ is used to take command-line arguments.
+
+So, the JVM looks for the main method first, and then starts executing the program from there.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Question-9.What is the use of System.out.println()?
+
+System.out.println() is used in Java to display output on the screen.
+
+It prints the given message or value to the console and then moves the cursor to the next line.
+
+Here, ‘System’ is a class, ‘out’ is an object of PrintStream, and ‘println()’ is a method used to print data.
+
+For example, if we write System.out.println("Hello"), it will display Hello on the screen.
+
+So, it is mainly used to show output to the user.
+--------------------------------------------------------------------------------------------------------------------------------------
+
+Question-10.What are data types in Java?
+
+Data types in Java are used to define the type of data that a variable can store.
+
+They tell the compiler what kind of value a variable will hold, such as numbers, characters, or text.
+
+In Java, data types are mainly divided into two categories: Primitive and Non-primitive data types.
+
+Primitive data types include basic types like int, float, double, char, and boolean. These store simple values.
+
+Non-primitive data types include objects like String, arrays, and classes. These can store more complex data.
+
+So, data types help in efficient memory usage and ensure that the correct type of data is used in a program
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Question-11. Give examples of primitive data types.
+
+Primitive data types in Java are the basic data types used to store simple values.
+
+Some examples are:
+int, float, double, char, boolean, byte, short, and long.
+
+For example, int is used to store integers, float and double are used for decimal numbers, char is used for a single character, and boolean stores true or false values.
+
+These are called primitive because they store actual values directly in memory.
+--------------------------------------------------------------------------------------------------------------------------
+
+Question-12.What is a variable?
+
+A variable in Java is a container used to store data values.
+
+It has a name, a data type, and a value. The data type defines what kind of data the variable can hold.
+
+For example, if we write ‘int age = 20’, here ‘age’ is the variable, ‘int’ is the data type, and ‘20’ is the value stored in it.
+
+Variables allow us to store and manipulate data in a program.
+
+So, in simple terms, a variable is a named memory location used to store data.
+----------------------------------------------------------------------------------------------------------------------
+
+Question-13.How do you declare a variable in Java?
+
+To declare a variable in Java, we specify the data type followed by the variable name.
+
+The general syntax is: dataType variableName;
+
+For example, ‘int age;’ declares a variable named age of type integer.
+
+We can also initialize it at the same time by assigning a value, like ‘int age = 20;’.
+
+So, declaration means creating the variable, and initialization means assigning a value to it.
+---------------------------------------------------------------------------------------------------------------------------
+Question-14.What is the difference between int and float?
+
+The main difference between int and float is the type of values they store.
+
+The int data type is used to store whole numbers without any decimal point, such as 10, 25, or -3.
+
+On the other hand, float is used to store decimal or fractional numbers, such as 10.5, 3.14, or -2.7.
+
+Another difference is that float values must be written with an ‘f’ at the end, like 3.14f.
+
+Also, int generally uses 4 bytes of memory, while float also uses 4 bytes but stores values in decimal form with less precision compared to double.
+
+So, int is for integers, and float is for decimal numbers.
+-----------------------------------------------------------------------------------------------------------------------------
+
+Question-15.What is type casting?
+
+Type casting in Java is the process of converting one data type into another.
+
+It is mainly of two types: implicit and explicit.
+
+Implicit casting, also called widening, happens automatically when we convert a smaller data type into a larger one, like converting int to double.
+
+Explicit casting, also called narrowing, is done manually by the programmer when converting a larger data type into a smaller one, like double to int.
+
+For example, if we convert 10.5 to int, the result will be 10, because the decimal part is removed.
+
+Type casting is used when we need to work with different data types in a program.
+------------------------------------------------------------------------------------------------------------------------
+
+Question-16.What is the default value of int?
+
+The default value of an int in Java is 0.
+
+This means that if an int variable is declared as a class member and not explicitly initialized, it will automatically have the value 0.
+
+However, for local variables inside methods, there is no default value, and they must be initialized before use.
+------------------------------------------------------------------------------------------------------------------
+
+Question-17.What is a keyword in Java?
+
+A keyword in Java is a reserved word that has a predefined meaning and is used by the Java programming language.
+
+These words are used to perform specific functions in a program and cannot be used as variable names, class names, or identifiers.
+
+Examples of keywords include int, class, public, static, if, else, and return.
+
+So, keywords are special words that are already defined in Java and have a fixed purpose.
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Question-18.Can we use reserved keywords as variable names?
+
+No, we cannot use reserved keywords as variable names in Java.
+
+This is because keywords already have predefined meanings in the language, and using them as variable names would create confusion for the compiler.
+
+For example, we cannot use words like int, class, public, or return as variable names.
+
+So, variable names must always be different from Java keywords.
+------------------------------------------------------------------------------------------------------------------
+
+Question-19.What is the difference between = and ==?
+
+The difference between = and == in Java is that they serve different purposes.
+
+The ‘=’ operator is an assignment operator. It is used to assign a value to a variable.
+For example, if we write int a = 10, it means we are assigning the value 10 to variable a.
+
+On the other hand, ‘==’ is a comparison operator. It is used to compare two values and checks whether they are equal or not. It returns either true or false.
+
+For example, if we write a == 10, it checks whether the value of a is equal to 10.
+
+So, ‘=’ is used for assignment, while ‘==’ is used for comparison.
+-------------------------------------------------------------------------------------------------------------------
+
+Question-20. What is an if statement?
+
+An if statement in Java is a conditional statement used to execute a block of code only if a specified condition is true.
+
+It helps in decision-making in a program.
+
+The condition inside the if statement is evaluated, and if it is true, the code inside the block is executed. If it is false, the code is skipped.
+
+For example, if we check if a number is greater than 10, the code inside the if block will run only when that condition is satisfied.
+
+We can also use else and else if with if to handle multiple conditions.
+------------------------------------------------------------------------------------------------------------------------
+
+Question-21. Difference between if and switch?
+
+The main difference between if and switch is in how they handle conditions.
+
+The if statement is used to check multiple conditions and can work with different types of expressions like relational and logical operators. It is more flexible and can handle complex conditions.
+
+On the other hand, switch is used when we want to compare a single variable against multiple constant values. It is mainly used for discrete values like int, char, or String.
+
+In switch, we use case labels, and each case represents a possible value. It is generally more readable and efficient when dealing with many fixed options.
+
+So, if is used for complex and flexible conditions, while switch is used for multiple fixed values of a single variable.
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Question-22.What is a loop?
+
+A loop in Java is used to execute a block of code repeatedly as long as a certain condition is true.
+
+It helps in reducing code repetition and makes programs more efficient.
+
+Instead of writing the same code multiple times, we can use a loop to run it again and again.
+
+Common types of loops in Java are for loop, while loop, and do-while loop.
+
+So, a loop is used when we want to perform a task multiple times automatically.
+--------------------------------------------------------------------------------------------------------------------
+
+Question-23.Types of loops in Java?
+
+In Java, there are mainly three types of loops: for loop, while loop, and do-while loop.
+
+The for loop is used when we know in advance how many times we want to repeat a task.
+
+The while loop is used when the number of iterations is not known, and the loop runs as long as the condition is true.
+
+The do-while loop is similar to the while loop, but it executes at least once, even if the condition is false, because the condition is checked after execution.
+
+So, these loops help in repeating tasks based on different conditions.
+-------------------------------------------------------------------------------------------------------------------------
+
+Question-24.Difference between for loop and while loop?
+
+The main difference between a for loop and a while loop is how they are used and structured.
+
+A for loop is used when we know the number of iterations in advance. It has initialization, condition, and increment or decrement all in one line.
+
+On the other hand, a while loop is used when we do not know the exact number of iterations. It only checks the condition, and initialization and increment are written separately.
+
+In a for loop, everything is more compact and easy to read when the loop count is fixed.
+In a while loop, it is more flexible and suitable for conditions that depend on runtime.
+
+So, for loop is used for fixed iterations, while while loop is used for unknown or condition-based iterations.
+------------------------------------------------------------------------------------------------------------------
+
+Question-25.What is break statement?
+
+The continue statement in Java is used to skip the current iteration of a loop and move to the next iteration.
+
+When continue is encountered, the remaining code inside the loop for that iteration is skipped, and the loop continues with the next cycle.
+
+It is commonly used when we want to ignore certain conditions but continue the loop.
+
+So, continue does not terminate the loop like break, it only skips one iteration.
+-----------------------------------------------------------------------------------------------------------------------------
+
+Question-26.What is continue statement?
+
+The continue statement in Java is used to skip the current iteration of a loop and continue with the next iteration.
+
+When the continue statement is executed, the remaining code inside that loop iteration is skipped, and control moves to the next cycle of the loop.
+
+It is mainly used when we want to ignore certain conditions but still keep the loop running.
+
+So, unlike break which stops the loop completely, continue only skips one iteration.
+--------------------------------------------------------------------------------------------------------------------------
+
+Question-27.What will happen if we don’t write the main method?
+
+If we don’t write the main method in a Java program, the program will not execute.
+
+This is because the JVM always looks for the main method as the starting point of the program.
+
+If it is not found, the program will compile successfully, but at runtime, it will give an error saying that the main method is not found.
+
+So, without the main method, the program cannot run.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Question-28.Can we run a Java program without class?
+
+No, we cannot run a Java program without a class.
+
+This is because Java is a class-based programming language, and all code must be written inside a class.
+
+Even the main method, which is the starting point of execution, must be defined inside a class.
+
+So, without a class, the program cannot be compiled or executed in Java.
+-----------------------------------------------------------------------------------------------------------------------
+
+Question-29. What happens if we don’t compile a Java program?
+
+If we don’t compile a Java program, it will not run.
+
+This is because Java source code is first converted into bytecode using the compiler. The JVM can only execute bytecode, not the original source code.
+
+So, if we skip the compilation step, there will be no bytecode generated, and the JVM will not be able to execute the program.
+
+Therefore, compilation is a necessary step before running a Java program.
+--------------------------------------------------------------------------------------------------------------------------------
+
+Question-30.Can a variable change its data type?
+
+No, a variable cannot change its data type once it is declared in Java.
+
+Each variable is assigned a specific data type at the time of declaration, and it can only store values of that type.
+
+However, we can convert values from one type to another using type casting, but the variable itself does not change its data type.
+
+So, the data type of a variable remains fixed throughout the program.
+----------------------------------------------------------------------------------------------------------------------------------
+
+Question-31.What is the size of int in Java?
+
+The size of an int in Java is 4 bytes, which is equal to 32 bits.
+
+It can store integer values in the range of -2³¹ to 2³¹ minus 1.
+
+So, int is commonly used to store whole numbers within this range.
+----------------------------------------------------------------------------------------------------------------------------
+
+Question-32.Why Java does not support pointers directly?
+
+Java does not support pointers directly to make the language simpler, safer, and more secure.
+
+In languages like C or C++, pointers can directly access memory addresses, which can lead to problems like memory corruption, security issues, and program crashes.
+
+Java avoids these issues by not allowing direct pointer manipulation. Instead, it uses references to access objects.
+
+This improves memory management and makes Java more user-friendly and secure.
+
+So, Java does not support pointers directly to ensure safety, simplicity, and better security.
+
+
