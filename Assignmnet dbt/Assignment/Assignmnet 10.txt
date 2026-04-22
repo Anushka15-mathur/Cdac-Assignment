@@ -1,0 +1,22 @@
+
+Question-1
+ select s1.sname "Salespeople 1" , s2.sname "Salespeople 2", s1.city from salespeople s1, salespeople s2
+    -> where s1.city = s2.city
+    -> and s1.snum < s2.snum;
++---------------+---------------+--------+
+| Salespeople 1 | Salespeople 2 | city   |
++---------------+---------------+--------+
+| Peel          | Motika        | London |
++---------------+---------------+--------+
+
+Question - 2
+
+ select c1.cname , c2.city from customer c1, customer c2
+    -> where c1.rating = c2.rating and c1.cname = 'Hoffman';
++---------+--------+
+| cname   | city   |
++---------+--------+
+| Hoffman | London |
+| Hoffman | London |
+| Hoffman | Rome   |
++---------+--------+

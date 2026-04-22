@@ -1,0 +1,160 @@
+Question-1
+
+select min(status) from Supplier;
++-------------+
+| min(status) |
++-------------+
+| 10          |
++-------------+
+
+Question-2
+
+ select max(weight) from parts;
++-------------+
+| max(weight) |
++-------------+
+|         100 |
++-------------+
+
+Question-3
+
+ select avg(weight) from parts;
++-------------+
+| avg(weight) |
++-------------+
+|          75 |
++-------------+
+
+Question-4
+
+select sum(qty) "Total Quantity"
+    -> from SPJ
+    -> where PID = 105;
++----------------+
+| Total Quantity |
++----------------+
+|             34 |
++----------------+
+
+Question - 5
+
+select PID, Sum(Qty) from SPJ
+    -> group by PID;
++------+----------+
+| PID  | Sum(Qty) |
++------+----------+
+|  105 |       34 |
+|  121 |       45 |
+|  156 |       30 |
+|  112 |       22 |
+|  145 |       56 |
+| NULL |       34 |
++------+----------+
+
+Question- 6
+
+select PID, avg(QTY) from SPJ
+    -> group by PID;
++------+----------+
+| PID  | avg(QTY) |
++------+----------+
+|  105 |       34 |
+|  121 |       45 |
+|  156 |       30 |
+|  112 |       22 |
+|  145 |       56 |
+| NULL |       17 |
++------+----------+
+
+Question-7
+
+ select PId, max(qty) from SPJ
+    -> group by PID
+    -> having max(qty) > 800;
+Empty set (0.06 sec)
+
+mysql> select PId, max(qty) from SPJ
+    -> group by PID
+    -> having max(qty) < 800;
++------+----------+
+| PId  | max(qty) |
++------+----------+
+|  105 | 34       |
+|  121 | 45       |
+|  156 | 30       |
+|  112 | 22       |
+|  145 | 56       |
+| NULL | 22       |
++------+----------+
+
+Question- 8
+
+ select status, count(*) "Suppliers" from supplier
+    -> group by status;
++--------+-----------+
+| status | Suppliers |
++--------+-----------+
+| 10     |         1 |
+| 40     |         2 |
+| 30     |         1 |
+| 55     |         1 |
+| 34     |         1 |
+| 23     |         1 |
+| 20     |         1 |
++--------+-----------+
+
+Question - 9
+
+select distinct city, jname from project
+    -> order by 1;
++--------+--------+
+| city   | jname  |
++--------+--------+
+| athens | olivia |
+| delhi  | george |
+| london | amelia |
+| mumbai | noah   |
+| paris  | Ava    |
++--------+--------+
+
+Question- 10
+
+select count(status) from supplier;
++---------------+
+| count(status) |
++---------------+
+|             8 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*)from supplier;
++----------+
+| count(*) |
++----------+
+|        8 |
++----------+
+
+count(status) counts all the non null values but count(*) will count all the rows even if contains null values.
+
+Question-11
+
+select
+    -> case
+    -> when status = 10 then 'Ten'
+    -> when status = 20 then 'Twenty'
+    -> when status = 30 then 'Thirty'
+    -> end "Status",
+    -> count(*) "Count"
+    -> from Supplier
+    -> group by Status;
++--------+-------+
+| Status | Count |
++--------+-------+
+| Ten    |     1 |
+| NULL   |     2 |
+| Thirty |     1 |
+| NULL   |     1 |
+| NULL   |     1 |
+| NULL   |     1 |
+| Twenty |     1 |
++--------+-------+

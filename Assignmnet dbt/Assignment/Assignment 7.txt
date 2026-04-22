@@ -1,0 +1,77 @@
+Question-1
+
+mysql> select count(*) from orders
+    -> where odate = '1990-10-03';
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+
+Question-2
+
+> select count(distinct city) from CUSTOMER;
++----------------------+
+| count(distinct city) |
++----------------------+
+|                    4 |
++----------------------+
+
+Question-3
+
+ select onum,min(amt) "Smallest Order" from orders
+    -> group by onum
+    -> order by 2;
++------+----------------+
+| onum | Smallest Order |
++------+----------------+
+| 3001 |          18.69 |
+| 3007 |          75.75 |
+| 3003 |         767.19 |
+| 3006 |        1098.16 |
+| 3010 |        1390.95 |
+| 3009 |        1713.23 |
+| 3002 |        1900.10 |
+| 3008 |        4723.00 |
+| 3005 |        5160.45 |
+| 3011 |        9891.88 |
++------+----------------+
+
+Question-4
+
+ SELECT * FROM CUSTOMER
+    -> WHERE CNAME LIKE 'G%'
+    -> ORDER BY CNAME
+    -> LIMIT 1;
++------+----------+------+--------+------+
+| Cnum | Cname    | City | Rating | Snum |
++------+----------+------+--------+------+
+| 2002 | Giovanni | Rome |    200 | 1003 |
++------+----------+------+--------+------+
+
+Question -5
+
+ select city, max(distinct rating) from CUSTOMER
+    -> group by city
+    -> order by 1;
++----------+----------------------+
+| city     | max(distinct rating) |
++----------+----------------------+
+| Berlin   |                  300 |
+| London   |                  100 |
+| Rome     |                  200 |
+| San Jose |                  300 |
++----------+----------------------+
+
+Question- 6
+
+ select odate, count(distinct snum) "Salespeople Number" from orders
+    -> group by odate;
++------------+--------------------+
+| odate      | Salespeople Number |
++------------+--------------------+
+| 1990-10-03 |                  4 |
+| 1990-10-04 |                  2 |
+| 1990-10-05 |                  1 |
+| 1990-10-06 |                  2 |
++------------+--------------------+

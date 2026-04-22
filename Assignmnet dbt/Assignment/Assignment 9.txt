@@ -1,0 +1,81 @@
+Question -1
+
+select onum , cname from orders, customer
+    -> where customer.snum = orders.snum
+    -> order by 1;
++------+----------+
+| onum | cname    |
++------+----------+
+| 3001 | Cisneros |
+| 3002 | Pereira  |
+| 3003 | Clemens  |
+| 3003 | Hoffman  |
+| 3005 | Grass    |
+| 3005 | Liu      |
+| 3006 | Cisneros |
+| 3007 | Grass    |
+| 3007 | Liu      |
+| 3008 | Clemens  |
+| 3008 | Hoffman  |
+| 3009 | Giovanni |
+| 3010 | Grass    |
+| 3010 | Liu      |
+| 3011 | Clemens  |
+| 3011 | Hoffman  |
++------+----------+
+
+Question -2
+
+ select Sname, Cname, Onum from orders, customer, salespeople
+    -> where salespeople.Snum = Customer.Snum and customer.snum = orders.snum
+    -> order by 1;
++---------+----------+------+
+| Sname   | Cname    | Onum |
++---------+----------+------+
+| Axelrod | Giovanni | 3009 |
+| Motika  | Pereira  | 3002 |
+| Peel    | Hoffman  | 3011 |
+| Peel    | Hoffman  | 3008 |
+| Peel    | Hoffman  | 3003 |
+| Peel    | Clemens  | 3011 |
+| Peel    | Clemens  | 3008 |
+| Peel    | Clemens  | 3003 |
+| Rifkin  | Cisneros | 3006 |
+| Rifkin  | Cisneros | 3001 |
+| Serres  | Liu      | 3010 |
+| Serres  | Liu      | 3007 |
+| Serres  | Liu      | 3005 |
+| Serres  | Grass    | 3010 |
+| Serres  | Grass    | 3007 |
+| Serres  | Grass    | 3005 |
++---------+----------+------+
+
+Question -3
+
+select Cname, Sname, comm from customer, salespeople
+    -> where customer.Snum = Salespeople.Snum
+    -> having comm>0.12
+    -> order by 1;
++----------+--------+------+
+| Cname    | Sname  | comm |
++----------+--------+------+
+| Cisneros | Rifkin | 0.15 |
+| Grass    | Serres | 0.13 |
+| Liu      | Serres | 0.13 |
++----------+--------+------+
+
+Question - 4
+
+select orders.Onum, Orders.Snum, Orders.amt*0.12 "Commission" from orders, customer
+    -> where orders.cnum = customer.cnum and customer.rating>100
+    -> order by 1;
++------+------+------------+
+| Onum | Snum | Commission |
++------+------+------------+
+| 3001 | 1007 |       2.24 |
+| 3005 | 1002 |     619.25 |
+| 3006 | 1007 |     131.78 |
+| 3007 | 1002 |       9.09 |
+| 3009 | 1003 |     205.59 |
+| 3010 | 1002 |     166.91 |
++------+------+------------+

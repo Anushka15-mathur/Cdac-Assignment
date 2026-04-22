@@ -1,0 +1,70 @@
+Question-1
+
+
+Question-2
+
+
+Question-3
+
+select pname from parts
+    -> where weight > all
+    -> (select weight from parts
+    -> where color = 'Red');
++--------+
+| pname  |
++--------+
+| gita   |
+| shruti |
++--------+
+
+Question-4
+
+ select jname from project
+    -> where city =
+    -> (select city from project
+    -> where jname = 'Ava');
++-------+
+| jname |
++-------+
+| Ava   |
++-------+
+Question-5
+
+select pname from parts
+    -> where weight < all
+    -> (select weight from parts
+    -> where color = 'gray');
++----------+
+| pname    |
++----------+
+| ashutosh |
++----------+
+Question-6
+
+select sname from supplier, spj
+    -> where supplier.sid = spj.sid and
+    -> spj.qty =
+    -> (select max(qty) from spj);
++-------+
+| sname |
++-------+
+| esha  |
++-------+
+Question-7
+
+
+Question-8
+select sname from supplier, spj
+    -> where supplier.sid = spj.sid
+    -> group by supplier.sname,supplier.sid
+    -> having sum(spj.qty) =
+    -> ( select max(total_qty)
+    -> from(select sum(qty) as total_qty from spj
+    -> group by sid)
+    -> as temp);
++-------+
+| sname |
++-------+
+| esha  |
++-------+
+Question-9

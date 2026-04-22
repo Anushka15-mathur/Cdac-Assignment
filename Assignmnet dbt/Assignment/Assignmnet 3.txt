@@ -1,0 +1,4 @@
+Question-1
+Yes, ANSI does recognize the DATE data type. Because ANSU SQL standar includes several standard date and time date types, and DATE is one of them. 
+Question-2
+DML(Data Manipulation Language) is used to insert data into a tabel.

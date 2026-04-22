@@ -1,0 +1,141 @@
+Question -1
+
+ select supplier.Sname, SPJ.QTY from supplier, spj
+    -> where supplier.sid = spj.sid
+    -> order by Sname;
++----------+------+
+| Sname    | QTY  |
++----------+------+
+| Amit     | 34   |
+| anurag   | 12   |
+| esha     | 56   |
+| Reema    | 30   |
+| Sita     | 22   |
+| Suraj    | 45   |
+| vanshita | 22   |
++----------+------+
+
+Question-2
+
+ select parts.pname, SPJ.Qty from SPJ, parts
+    -> where parts.pid = spj.pid
+    -> order by pname;
++----------+------+
+| pname    | Qty  |
++----------+------+
+| anusha   | 45   |
+| ashutosh | 30   |
+| gita     | 34   |
+| raj      | 22   |
+| shruti   | 56   |
++----------+------+
+
+Question-3
+
+ select project.jname, SPJ.Qty from SPJ, project
+    -> where project.jid = spj.jid
+    -> order by jname;
++--------+------+
+| jname  | Qty  |
++--------+------+
+| amelia | 34   |
+| Ava    | 45   |
+| george | 56   |
+| noah   | 22   |
+| olivia | 30   |
++--------+------+
+
+Question-4
+
+select supplier.sname, parts.pname, project.jname, SPJ.QTY from SPJ, Supplier, parts, project
+    -> where supplier.sid = spj.sid
+    -> and parts.pid = spj.pid
+    -> and project.jid = spj.jid
+    -> order by sname;
++-------+----------+--------+------+
+| sname | pname    | jname  | QTY  |
++-------+----------+--------+------+
+| Amit  | gita     | amelia | 34   |
+| esha  | shruti   | george | 56   |
+| Reema | ashutosh | olivia | 30   |
+| Sita  | raj      | noah   | 22   |
+| Suraj | anusha   | Ava    | 45   |
++-------+----------+--------+------+
+
+Question- 5
+
+ select supplier.sname from SPJ, Supplier, project
+    -> where supplier.sid = spj.sid
+    -> and project.jid = spj.jid
+    -> and supplier.city = project.city
+    -> order by sname;
++-------+
+| sname |
++-------+
+| Amit  |
+| esha  |
+| Sita  |
++-------+
+
+Question- 6
+
+select parts.pname , spj.Qty from SPJ, parts
+    -> where parts.pid = spj.pid
+    -> and parts.color = 'Red';
++--------+------+
+| pname  | Qty  |
++--------+------+
+| anusha | 45   |
++--------+------+
+
+Question-7
+
+ select SPJ.Qty from Supplier, SPJ
+    -> where Supplier.sid = SPJ.sid
+    -> and Supplier.status = 23;
++------+
+| Qty  |
++------+
+| 22   |
++------+
+
+Question-8
+
+select parts.pname, spj.qty from spj, parts
+    -> where parts.pid = spj.pid
+    -> and parts.weight >14
+    -> order by pname;
++----------+------+
+| pname    | qty  |
++----------+------+
+| anusha   | 45   |
+| ashutosh | 30   |
+| gita     | 34   |
+| raj      | 22   |
+| shruti   | 56   |
++----------+------+
+
+Question-9
+
+ select project.jname, project.city from spj, project
+    -> where project.jid = spj.jid
+    -> group by project.jid, project.jname, project.city
+    -> having sum(spj.qty) > 50;
++--------+-------+
+| jname  | city  |
++--------+-------+
+| george | delhi |
++--------+-------+
+
+Question-10
+
+select parts.pname, spj.qty from spj, parts
+    -> where parts.pid = spj.pid
+    -> and parts.weight < 50;
++----------+------+
+| pname    | qty  |
++----------+------+
+| ashutosh | 30   |
++----------+------+
+
+Question-11

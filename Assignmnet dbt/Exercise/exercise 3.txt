@@ -1,0 +1,151 @@
+Question-1
+
+mysql> select concat(upper(substring(sname ,1,1)),lower(substring(sname,2)))
+    -> from Supplier;
++----------------------------------------------------------------+
+| concat(upper(substring(sname ,1,1)),lower(substring(sname,2))) |
++----------------------------------------------------------------+
+| Amit                                                           |
+| Suraj                                                          |
+| Reema                                                          |
+| Sita                                                           |
+| Esha                                                           |
+| Vanshita                                                       |
+| Anurag                                                         |
++----------------------------------------------------------------+
+
+Question-2
+
+mysql> select upper(Sname)
+    -> from Supplier;
++--------------+
+| upper(Sname) |
++--------------+
+| AMIT         |
+| SURAJ        |
+| REEMA        |
+| SITA         |
+| ESHA         |
+| VANSHITA     |
+| ANURAG       |
++--------------+
+
+Question-3
+mysql> select lower(Sname)
+    -> from Supplier;
++--------------+
+| lower(Sname) |
++--------------+
+| amit         |
+| suraj        |
+| reema        |
+| sita         |
+| esha         |
+| vanshita     |
+| anurag       |
++--------------+
+
+Question-4
+mysql> select lpad(Sname,25,' ')
+    -> from Supplier;
++---------------------------+
+| lpad(Sname,25,' ')        |
++---------------------------+
+|                      Amit |
+|                     Suraj |
+|                     Reema |
+|                      Sita |
+|                      esha |
+|                  vanshita |
+|                    anurag |
++---------------------------+
+
+Question-5
+
+mysql> select replace(Sname,'la','ro') from Supplier;
++--------------------------+
+| replace(Sname,'la','ro') |
++--------------------------+
+| Amit                     |
+| Suraj                    |
+| Reema                    |
+| Sita                     |
+| esha                     |
+| vanshita                 |
+| anurag                   |
++--------------------------+
+
+did not had any la in any names in the given data.
+
+Question - 6
+
+mysql> select replace(replace(Sname,'l','r'),'a','o') from Supplier;
++-----------------------------------------+
+| replace(replace(Sname,'l','r'),'a','o') |
++-----------------------------------------+
+| Amit                                    |
+| Suroj                                   |
+| Reemo                                   |
+| Sito                                    |
+| esho                                    |
+| vonshito                                |
+| onurog                                  |
++-----------------------------------------+
+
+Question - 7
+
+mysql> select length(Sname) from Supplier;
++---------------+
+| length(Sname) |
++---------------+
+|             4 |
+|             5 |
+|             5 |
+|             4 |
+|             4 |
+|             8 |
+|             6 |
++---------------+
+
+Question- 8
+
+mysql> select * from Supplier
+    -> where soundex(Sname) = soundex('Bluki');
++------+-------+--------+--------+
+| SID  | Sname | Status | City   |
++------+-------+--------+--------+
+|  144 | bloke | 20     | Berlin |
++------+-------+--------+--------+
+
+Question-9
+select Sname,
+    -> case
+    -> when status = 10 then 'Ten'
+    -> when status = 20 then 'Twenty'
+    -> when status = 23 then 'Twentythree'
+    -> when status = 30 then 'Thirty'
+    -> when status = 34 then 'Thirtyfour'
+    -> when status = 40 then 'Forty'
+    -> when status = 55 then 'Fiftyfive'
+    -> end "Rating"
+    -> from Supplier;
++----------+-------------+
+| Sname    | Rating      |
++----------+-------------+
+| Amit     | Ten         |
+| Suraj    | Forty       |
+| Reema    | Thirty      |
+| Sita     | Fiftyfive   |
+| esha     | Thirtyfour  |
+| vanshita | Twentythree |
+| anurag   | Forty       |
+| bloke    | Twenty      |
++----------+-------------+
+Question-10
+
+mysql> select dayname(curdate())from dual;
++--------------------+
+| dayname(curdate()) |
++--------------------+
+| Friday             |
++--------------------+

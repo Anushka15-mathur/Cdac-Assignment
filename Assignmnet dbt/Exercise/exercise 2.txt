@@ -1,0 +1,84 @@
+Question-1
+
+mysql> select * from Supplier
+    -> order by city desc;
++------+----------+--------+----------+
+| SID  | Sname    | Status | City     |
++------+----------+--------+----------+
+|  104 | Suraj    | 40     | San Jose |
+|  134 | vanshita | 23     | paris    |
+|  106 | Sita     | 55     | Mumbai   |
+|  101 | Amit     | 10     | London   |
+|  108 | esha     | 34     | Delhi    |
+|  102 | Reema    | 30     | Berlin   |
+|  112 | anurag   | 40     | athens   |
++------+----------+--------+----------+
+
+Question -2
+
+mysql> select * from parts
+    -> order by city asc, pname asc;
++------+----------+-------+--------+------------+
+| Pid  | Pname    | Color | weight | City       |
++------+----------+-------+--------+------------+
+|  121 | anusha   | red   |     78 | athens     |
+|  112 | raj      | gray  |     56 | California |
+|  156 | ashutosh | pink  |     45 | london     |
+|  145 | shruti   | black |     96 | mumbai     |
+|  105 | gita     | blue  |    100 | paris      |
++------+----------+-------+--------+------------+
+
+Question -3
+
+mysql> select * from Supplier
+    -> where status between 10 and 20;
++------+-------+--------+--------+
+| SID  | Sname | Status | City   |
++------+-------+--------+--------+
+|  101 | Amit  | 10     | London |
++------+-------+--------+--------+
+
+Question - 4
+
+mysql> select Pname, weight from parts
+    -> where weight not between 10 and 80;
++--------+--------+
+| Pname  | weight |
++--------+--------+
+| gita   |    100 |
+| shruti |     96 |
++--------+--------+
+
+Question - 5
+
+mysql> select pname from parts
+    -> where pname like 'S%';
++--------+
+| pname  |
++--------+
+| shruti |
++--------+
+
+Question -6
+mysql> select * from Supplier
+    -> where city like 'L%';
++------+-------+--------+--------+
+| SID  | Sname | Status | City   |
++------+-------+--------+--------+
+|  101 | Amit  | 10     | London |
++------+-------+--------+--------+
+
+Question - 7
+
+mysql> select * from project
+    -> where jname like '__n%';
+Empty set
+
+mysql> select * from project
+    -> where jname like '__e%';
++------+--------+--------+
+| JID  | JNAME  | CITY   |
++------+--------+--------+
+|  132 | amelia | london |
++------+--------+--------+
+1 row in set (0.00 sec)

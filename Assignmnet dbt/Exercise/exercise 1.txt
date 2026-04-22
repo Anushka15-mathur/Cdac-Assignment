@@ -1,0 +1,330 @@
+Question-1
+create table SEMP(
+EMPNO CHAR(4),
+EMPNAME CHAR(20),
+BASIC FLOAT,
+DEPTNO CHAR(2),
+DEPTHEAD CHAR(4)
+);
+
+insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+values
+('0001', 'SUNIL', 6000, '10',null),
+'(0002', 'HIREN', 8000, '20',null),
+('0003', 'ALI', 4000, '10', '0001'),
+'(0004', 'GEORGE', 6000,null, '0002');
+
+mysql> select * from semp;
++-------+---------+-------+--------+----------+
+| EMPNO | EMPNAME | BASIC | DEPTNO | DEPTHEAD |
++-------+---------+-------+--------+----------+
+| 0001  | SUNIL   |  6000 | 10     | NULL     |
+| 0002  | HIREN   |  8000 | 20     | NULL     |
+| 0003  | ALI     |  4000 | 10     | 0001     |
+| 0004  | GEORGE  |  6000 | NULL   | 0002     |
++-------+---------+-------+--------+----------+
+
+Question- 2
+create table sdept(
+deptno char(2),
+deptname char(15)
+);
+
+insert into sdept(deptno,deptname)
+values
+('10', 'Development'),
+('20', 'Training');
+
+mysql> select * from sdept;
++--------+-------------+
+| DEPTNO | DEPTNAME    |
++--------+-------------+
+| 10     | Development |
+| 20     | Training    |
++--------+-------------+
+
+Table--
+
+mysql> create table Supplier(
+     SID int(4),
+     Sname varchar(10),
+     Status varchar(10),
+     City varchar(10)
+     );
+ insert into Supplier(SID,Sname,Status,City)
+     values
+     (101,'Amit','10','London'),
+     (104,'Suraj','40','San Jose'),
+     (102,'Reema','30','Berlin'),
+     (106,'Sita','55','Mumbai'),
+     (108,'esha','34','Delhi');
+
+mysql> select * from supplier;
++------+-------+--------+----------+
+| SID  | Sname | Status | City     |
++------+-------+--------+----------+
+|  101 | Amit  | 10     | London   |
+|  104 | Suraj | 40     | San Jose |
+|  102 | Reema | 30     | Berlin   |
+|  106 | Sita  | 55     | Mumbai   |
+|  108 | esha  | 34     | Delhi    |
++------+-------+--------+----------+
+
+create table Parts(
+Pid int(4),
+Pname varchar(10),
+Color varchar(10),
+Weight varchar(10),
+City varchar(10)
+);
+
+insert into Parts (PID, PNAME,COLOR,WEIGHT,CITY)
+VALUES
+(105,'gita','blue','100','paris'),
+(121,'anusha','red','78','athens'),
+(156,'ashutosh','pink','45','london'),
+(112,'raj','gray','56','California'),
+(145,'shruti','black','96','mumbai');
+
+
+mysql> select * from parts;
++------+----------+-------+--------+------------+
+| Pid  | Pname    | Color | Weight | City       |
++------+----------+-------+--------+------------+
+|  105 | gita     | blue  | 100    | paris      |
+|  121 | anusha   | red   | 78     | athens     |
+|  156 | ashutosh | pink  | 45     | london     |
+|  112 | raj      | gray  | 56     | California |
+|  145 | shruti   | black | 96     | mumbai     |
++------+----------+-------+--------+------------+
+
+insert into Supplier(SID,Sname,Status,City)
+     values
+(134,'vanshita','23','paris'),
+(112,'anurag','40','athens');
+
+
+mysql> select * from Supplier;
++------+----------+--------+----------+
+| SID  | Sname    | Status | City     |
++------+----------+--------+----------+
+|  101 | Amit     | 10     | London   |
+|  104 | Suraj    | 40     | San Jose |
+|  102 | Reema    | 30     | Berlin   |
+|  106 | Sita     | 55     | Mumbai   |
+|  108 | esha     | 34     | Delhi    |
+|  134 | vanshita | 23     | paris    |
+|  112 | anurag   | 40     | athens   |
++------+----------+--------+----------+
+
+create table PROJECT(
+JID INT(4),
+JNAME VARCHAR(10),
+CITY VARCHAR(10)
+);
+
+mysql> INSERT INTO PROJECT(JID,JNAME,CITY)
+   VALUES
+ (132,'amelia','london'),
+ (115,'Ava','paris'),
+ (124,'olivia','athens'),
+ (162,'noah','mumbai'),
+ (119,'george','delhi');
+  
+    -> select * from project;
++------+--------+--------+
+| JID  | JNAME  | CITY   |
++------+--------+--------+
+|  132 | amelia | london |
+|  115 | Ava    | paris  |
+|  124 | olivia | athens |
+|  162 | noah   | mumbai |
+|  119 | george | delhi  |
++------+--------+--------+
+
+create table SPJ(
+SID INT(4),
+PID INT(4),
+JID INT(4),
+QTY VARCHAR(10)
+);
+
+INSERT INTO SPJ(SID,PID,JID,QTY)
+VALUES
+(101,105,132,'34'),
+(104,121,115,'45'),
+(102,156,124,'30'),
+(106,112,162,'22'),
+(108,145,119,'56'),
+(134,null,null,'22'),
+(112,null,null,'12');
+
+mysql> select * from SPJ;
++------+------+------+------+
+| SID  | PID  | JID  | QTY  |
++------+------+------+------+
+|  101 |  105 |  132 | 34   |
+|  104 |  121 |  115 | 45   |
+|  102 |  156 |  124 | 30   |
+|  106 |  112 |  162 | 22   |
+|  108 |  145 |  119 | 56   |
+|  134 | NULL | NULL | 22   |
+|  112 | NULL | NULL | 12   |
++------+------+------+------+
+
+Question -5
+
+mysql> select * from supplier;
++------+----------+--------+----------+
+| SID  | Sname    | Status | City     |
++------+----------+--------+----------+
+|  101 | Amit     | 10     | London   |
+|  104 | Suraj    | 40     | San Jose |
+|  102 | Reema    | 30     | Berlin   |
+|  106 | Sita     | 55     | Mumbai   |
+|  108 | esha     | 34     | Delhi    |
+|  134 | vanshita | 23     | paris    |
+|  112 | anurag   | 40     | athens   |
++------+----------+--------+----------+
+
+Question -6
+
+mysql> select SID,SNAME from supplier;
++------+----------+
+| SID  | SNAME    |
++------+----------+
+|  101 | Amit     |
+|  104 | Suraj    |
+|  102 | Reema    |
+|  106 | Sita     |
+|  108 | esha     |
+|  134 | vanshita |
+|  112 | anurag   |
++------+----------+
+
+Question-7
+mysql> select PNAME, COLOR FROM parts
+    -> where city = 'London';
++----------+-------+
+| PNAME    | COLOR |
++----------+-------+
+| ashutosh | pink  |
++----------+-------+
+
+Question -8
+mysql> select *from  Supplier
+    -> where city = 'London';
++------+-------+--------+--------+
+| SID  | Sname | Status | City   |
++------+-------+--------+--------+
+|  101 | Amit  | 10     | London |
++------+-------+--------+--------+
+
+Question - 9
+
+mysql> select *from Supplier
+    -> where city in('paris','athens');
++------+----------+--------+--------+
+| SID  | Sname    | Status | City   |
++------+----------+--------+--------+
+|  134 | vanshita | 23     | paris  |
+|  112 | anurag   | 40     | athens |
++------+----------+--------+--------+
+
+Question- 10
+
+mysql> select * from project
+    -> where city = 'athens';
++------+--------+--------+
+| JID  | JNAME  | CITY   |
++------+--------+--------+
+|  124 | olivia | athens |
++------+--------+--------+
+
+Question -11
+
+mysql> select Pname from parts
+    -> where weight between 12 and 14;
+Empty set
+
+Question- 12
+
+mysql> select * from Supplier
+    -> where status>=20;
++------+----------+--------+----------+
+| SID  | Sname    | Status | City     |
++------+----------+--------+----------+
+|  104 | Suraj    | 40     | San Jose |
+|  102 | Reema    | 30     | Berlin   |
+|  106 | Sita     | 55     | Mumbai   |
+|  108 | esha     | 34     | Delhi    |
+|  134 | vanshita | 23     | paris    |
+|  112 | anurag   | 40     | athens   |
++------+----------+--------+----------+
+
+Question-13
+
+mysql> select * from supplier
+    -> where not city = 'london';
++------+----------+--------+----------+
+| SID  | Sname    | Status | City     |
++------+----------+--------+----------+
+|  104 | Suraj    | 40     | San Jose |
+|  102 | Reema    | 30     | Berlin   |
+|  106 | Sita     | 55     | Mumbai   |
+|  108 | esha     | 34     | Delhi    |
+|  134 | vanshita | 23     | paris    |
+|  112 | anurag   | 40     | athens   |
++------+----------+--------+----------+
+
+Question-14
+mysql> select city from supplier;
++----------+
+| city     |
++----------+
+| London   |
+| San Jose |
+| Berlin   |
+| Mumbai   |
+| Delhi    |
+| paris    |
+| athens   |
++----------+
+
+Question-15
+mysql> SELECT WEIGHT * 1000 AS milligrams,
+    ->        WEIGHT / 1000 AS kilograms
+    -> FROM Parts;
++------------+-----------+
+| milligrams | kilograms |
++------------+-----------+
+|     100000 |       0.1 |
+|      78000 |     0.078 |
+|      45000 |     0.045 |
+|      56000 |     0.056 |
+|      96000 |     0.096 |
++------------+-----------+
+
+
+
+supplier-
+
+mysql> insert into Supplier(SID, Sname, Status, City)
+    -> values
+    -> (144,'bloke','20','Berlin')
+    -> ;
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from Supplier;
++------+----------+--------+----------+
+| SID  | Sname    | Status | City     |
++------+----------+--------+----------+
+|  101 | Amit     | 10     | London   |
+|  104 | Suraj    | 40     | San Jose |
+|  102 | Reema    | 30     | Berlin   |
+|  106 | Sita     | 55     | Mumbai   |
+|  108 | esha     | 34     | Delhi    |
+|  134 | vanshita | 23     | paris    |
+|  112 | anurag   | 40     | athens   |
+|  144 | bloke    | 20     | Berlin   |
++------+----------+--------+----------+

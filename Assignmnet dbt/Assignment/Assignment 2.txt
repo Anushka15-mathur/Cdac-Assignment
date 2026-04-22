@@ -1,0 +1,12 @@
+Question-1 
+Cnmae is the primary key  in the customer table.
+
+Question-2
+Rating is the fourth column in the customer table.
+
+Question-3
+Another name for Row is Tuple, Entity,Opportunity,
+and for Column is Attribute ,Method.
+
+Questio-4
+Rows inside a Table are not stored sequentially, They are scattered/ fragmented all over the database server hard disk. That is is is not possible to see first fiverows of a table.

@@ -1,0 +1,68 @@
+Question- 1
+
+ select cname, city,rating, 'High Rating' as Rating_Status from customer
+    -> where rating >= 200
+    -> union
+    -> select cname, city, rating, "Low Rating" as Rating_Status from customer
+    -> where rating < 200;
++----------+----------+--------+---------------+
+| cname    | city     | rating | Rating_Status |
++----------+----------+--------+---------------+
+| Giovanni | Rome     |    200 | High Rating   |
+| Liu      | San Jose |    200 | High Rating   |
+| Grass    | Berlin   |    300 | High Rating   |
+| Cisneros | San Jose |    300 | High Rating   |
+| Hoffman  | London   |    100 | Low Rating    |
+| Clemens  | London   |    100 | Low Rating    |
+| Pereira  | Rome     |    100 | Low Rating    |
++----------+----------+--------+---------------+
+
+Question - 2
+
+ select sname 'Name', snum 'Number' from salespeople
+    -> where snum in(
+    -> select snum from orders
+    -> group by snum
+    -> having count(*) > 1
+    -> )
+    -> union
+    -> select cname 'Name', cnum 'Number' from customer
+    -> where cnum in(
+    -> select cnum from orders
+    -> group by cnum
+    -> having count(*) >1
+    -> )
+    -> order by 'Name';
++----------+--------+
+| Name     | Number |
++----------+--------+
+| Peel     |   1001 |
+| Serres   |   1002 |
+| Rifkin   |   1007 |
+| Grass    |   2004 |
+| Clemens  |   2006 |
+| Cisneros |   2008 |
++----------+--------+
+
+Question- 3
+
+ select snum from salespeople
+    -> where city = 'San Jose'
+    -> union
+    -> select cnum from customer
+    -> where city = 'San Jose'
+    -> union all
+    -> select onum from orders
+    -> where odate = '1990-10-03';
++------+
+| snum |
++------+
+| 1002 |
+| 2003 |
+| 2008 |
+| 3001 |
+| 3003 |
+| 3002 |
+| 3005 |
+| 3006 |
++------+

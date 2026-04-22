@@ -1,0 +1,42 @@
+Question-1
+
+ select * from orders
+    -> where cnum = (
+    -> select cnum from customer
+    -> where cname = 'Cisneros'
+    -> );
++------+---------+------------+------+------+
+| Onum | Amt     | Odate      | Cnum | Snum |
++------+---------+------------+------+------+
+| 3001 |   18.69 | 1990-10-03 | 2008 | 1007 |
+| 3006 | 1098.16 | 1990-10-03 | 2008 | 1007 |
++------+---------+------------+------+------+
+
+Question- 2
+
+ select distinct cname, rating from customer
+    -> where cnum in (
+    -> select cnum from orders
+    -> where amt > (select avg(amt) from orders)
+    -> );
++---------+--------+
+| cname   | rating |
++---------+--------+
+| Liu     |    200 |
+| Clemens |    100 |
++---------+--------+
+
+Question - 3
+
+select snum, sum(amt) "Total amount"
+    -> from orders
+    -> group by snum
+    -> having sum(amt) > (
+    -> select max(amt)
+    -> from orders
+    -> );
++------+--------------+
+| snum | Total amount |
++------+--------------+
+| 1001 |     15382.07 |
++------+--------------+
