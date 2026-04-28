@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 4</title>
+</head>
+<body>
+
+<h2>Open Console (F12) to see output</h2>
+
+<script>
+
+// Exercise 1
+
+function processData1(str, callback) {
+    let result = callback(str);
+    console.log("Exercise 1 Output:", result);
+}
+
+function toUpperCase(str) {
+    return str.toUpperCase();
+}
+
+processData1("hello world", toUpperCase);
+
+
+
+// Exercise 2
+
+function forEachElement(arr, callback) {
+    for (let i = 0; i < arr.length; i++) {
+        callback(arr[i], i);
+    }
+}
+
+forEachElement([1, 2, 3, 4], function(element, index) {
+    console.log("Exercise 2 -> Index:", index, "Value:", element * 2);
+});
+
+
+
+// Exercise 3
+function fetchData1(url, callback) {
+    console.log("Exercise 3: Fetching data from:", url);
+
+    setTimeout(function() {
+        let response = "Data received from " + url;
+        callback(response);
+    }, 2000);
+}
+
+fetchData1("https://jsonplaceholder.typicode.com/users", function(response) {
+    console.log("Exercise 3 Output:", response);
+});
+
+
+
+// Exercise 4
+
+function fetchData2(url, callback) {
+    console.log("Exercise 4: Fetching data...");
+
+    setTimeout(function() {
+        let error = false; // change to true to test error
+
+        if (error) {
+            callback("Error occurred!", null);
+        } else {
+            let response = "Data from " + url;
+            callback(null, response);
+        }
+    }, 2000);
+}
+
+fetchData2("https://jsonplaceholder.typicode.com/users", function(error, response) {
+    if (error) {
+        console.log("Exercise 4 Error:", error);
+    } else {
+        console.log("Exercise 4 Response:", response);
+    }
+});
+
+
+
+// Exercise 5
+function fetchData3(url, callback) {
+    setTimeout(function() {
+        let response = "raw data from " + url;
+        callback(null, response);
+    }, 2000);
+}
+
+function processData2(data, callback) {
+    let processed = data.toUpperCase();
+    callback(processed);
+}
+
+fetchData3("https://jsonplaceholder.typicode.com/users", function(err, data) {
+    if (err) {
+        console.log("Exercise 5 Error:", err);
+    } else {
+        processData2(data, function(result) {
+            console.log("Exercise 5 Processed Data:", result);
+        });
+    }
+});
+
+</script>
+
+</body>
+</html>
