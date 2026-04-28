@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Budget Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Personal Budget Tracker</h2>
+
+    <!-- Input Form -->
+    <div class="card p-3 mb-4">
+        <input type="text" id="desc" class="form-control mb-2" placeholder="Description">
+        <input type="number" id="amount" class="form-control mb-2" placeholder="Amount">
+        <input type="date" id="date" class="form-control mb-2">
+
+        <button class="btn btn-success" onclick="handleAdd()">Add Expense</button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="mb-3">
+        <button class="btn btn-primary" onclick="showAll()">Show All</button>
+        <button class="btn btn-warning" onclick="showAbove20()">Above ₹20</button>
+        <button class="btn btn-info" onclick="showDescriptions()">Descriptions</button>
+    </div>
+
+    <!-- Output -->
+    <ul class="list-group mb-3" id="list"></ul>
+
+    <h4 id="total"></h4>
+</div>
+
+<script src="./section2.js"></script>
+</body>
+</html>
