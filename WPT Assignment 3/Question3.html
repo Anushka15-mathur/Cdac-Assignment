@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Q3</title>
+</head>
+<body>
+
+<select id="myList">
+    <option>Apple</option>
+    <option>Mango</option>
+    <option>Banana</option>
+</select>
+
+<button onclick="removeItem()">Remove Selected</button>
+
+<script>
+function removeItem() {
+    let list = document.getElementById("myList");
+    list.remove(list.selectedIndex);
+}
+</script>
+
+</body>
+</html>

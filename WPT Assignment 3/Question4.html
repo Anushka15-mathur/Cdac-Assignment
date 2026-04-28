@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Q4</title>
+</head>
+<body>
+
+<p>
+We have just started this section for the users 
+<b>beginner to intermediate</b> who want to work with 
+<b>JavaScript problems</b> and write scripts online.
+</p>
+
+<a href="#" onmouseover="highlight()" onmouseout="removeHighlight()">
+Hover over me
+</a>
+
+<script>
+function highlight() {
+    let boldWords = document.getElementsByTagName("b");
+    for (let i = 0; i < boldWords.length; i++) {
+        boldWords[i].style.backgroundColor = "yellow";
+    }
+}
+
+function removeHighlight() {
+    let boldWords = document.getElementsByTagName("b");
+    for (let i = 0; i < boldWords.length; i++) {
+        boldWords[i].style.backgroundColor = "transparent";
+    }
+}
+</script>
+
+</body>
+</html>
