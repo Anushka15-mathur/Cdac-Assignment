@@ -1,0 +1,264 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+}
+
+/* Dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #111;
+    top: 30px;
+    min-width: 150px;
+    border-radius: 5px;
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1549921296-3a6b8f5d2b1c?q=80&w=1600');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.hero h1 {
+    font-size: 4rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+
+.btn {
+    padding: 12px 25px;
+    background: #ffcc00;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #000;
+    color: #ffcc00;
+    transform: scale(1.05);
+}
+
+/* Scrolling Text */
+.scrolling-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+
+.scrolling-text {
+    white-space: nowrap;
+    animation: scrollText 15s linear infinite;
+    color: #ffcc00;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+.section-padding {
+    padding: 80px 50px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: #ffcc00;
+}
+
+.models-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.model-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.model-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.model-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.model-info {
+    padding: 20px;
+}
+
+.model-info h3 {
+    margin-bottom: 10px;
+}
+
+
+.heritage-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.heritage-content {
+    flex: 1;
+}
+
+.heritage-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.heritage-content span {
+    color: #ffcc00;
+}
+
+.heritage-image-container {
+    flex: 1;
+}
+
+.heritage-image-container img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footer {
+    background: #111;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid #222;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        background: #000;
+        flex-direction: column;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        display: none;
+    }
+
+    #menu-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
